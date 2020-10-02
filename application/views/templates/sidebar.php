@@ -162,13 +162,25 @@
                                                 <span>Jam</span></a>
                                             </li>
 
-                                            <!-- Divider -->
-                                            <hr class="sidebar-divider d-none d-md-block">
+                                            <!-- golongan -->
+                                            <?php if ($title == 'Data Golongan') : ?>
+                                                <li class="nav-item active">
+                                                <?php else : ?>
+                                                <li class="nav-item">
+                                                <?php endif; ?>
 
-                                            <!-- Sidebar Toggler (Sidebar) -->
-                                            <div class="text-center d-none d-md-inline">
-                                                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                                            </div>
+                                                <a class="nav-link" href="<?= base_url('Golongan'); ?>">
+                                                    <i class="fas fa-fw fa-clock"></i>
+                                                    <span>Golongan</span></a>
+                                                </li>
+
+                                                <!-- Divider -->
+                                                <hr class="sidebar-divider d-none d-md-block">
+
+                                                <!-- Sidebar Toggler (Sidebar) -->
+                                                <div class="text-center d-none d-md-inline">
+                                                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                                                </div>
 
 </ul>
 <!-- End of Sidebar -->

@@ -118,11 +118,58 @@ class Scheduler_Model extends CI_Model
         return $this->db->get('tb_prodi')->result_array();
     }
 
+    public function insertProdi()
+    {
+        $data = [
+            "nama_prodi" => $this->input->post('nama_prodi', true),
+        ];
+        $this->db->insert('tb_prodi', $data);
+    }
+
+    public function editProdi($id_prodi)
+    {
+        $data = [
+            "nama_prodi" => $this->input->post('nama_prodi', true),
+        ];
+
+        $this->db->where('id_prodi', $id_prodi);
+        $this->db->update('tb_prodi', $data);
+    }
+
+    public function deleteProdi($id_prodi)
+    {
+        $this->db->where('id_prodi', $id_prodi);
+        $this->db->delete('tb_prodi');
+    }
 
     //---------------------------- GOLONGAN ------------------------------
     public function getAllGolongan()
     {
         return $this->db->get('tb_golongan')->result_array();
+    }
+
+    public function insertGolongan()
+    {
+        $data = [
+            "nama_golongan" => $this->input->post('nama_golongan', true),
+        ];
+        $this->db->insert('tb_golongan', $data);
+    }
+
+    public function editGolongan($id_golongan)
+    {
+        $data = [
+            "nama_golongan" => $this->input->post('nama_golongan', true),
+        ];
+
+        $this->db->where('id_golongan', $id_golongan);
+        $this->db->update('tb_golongan', $data);
+    }
+
+    public function deleteGolongan($id_golongan)
+    {
+        $this->db->where('id_golongan', $id_golongan);
+        $this->db->delete('tb_golongan');
     }
 
     //----------------------- TAHUN AKADEMIK ----------------------------
@@ -131,6 +178,29 @@ class Scheduler_Model extends CI_Model
         return $this->db->get('tb_tahun_akademik')->result_array();
     }
 
+    public function insertTahunAkademik()
+    {
+        $data = [
+            "nama_tahun_akademik" => $this->input->post('nama_tahun_akademik', true),
+        ];
+        $this->db->insert('tb_tahun_akademik', $data);
+    }
+
+    public function editTahunAkademik($id_tahun_akademik)
+    {
+        $data = [
+            "nama_tahun_akademik" => $this->input->post('nama_tahun_akademik', true),
+        ];
+
+        $this->db->where('id_tahun_akademik', $id_tahun_akademik);
+        $this->db->update('tb_tahun_akademik', $data);
+    }
+
+    public function deleteTahunAkademik($id_tahun_akademik)
+    {
+        $this->db->where('id_tahun_akademik', $id_tahun_akademik);
+        $this->db->delete('tb_tahun_akademik');
+    }
 
     //-------------------------- SEMESTER -------------------------------
     public function getAllSemester()
@@ -207,10 +277,57 @@ class Scheduler_Model extends CI_Model
         return $this->db->get('tb_hari')->result_array();
     }
 
+    public function insertHari()
+    {
+        $data = [
+            "nama_hari" => $this->input->post('nama_hari', true),
+        ];
+        $this->db->insert('tb_hari', $data);
+    }
+
+    public function editHari($id_hari)
+    {
+        $data = [
+            "nama_hari" => $this->input->post('nama_hari', true),
+        ];
+
+        $this->db->where('id_hari', $id_hari);
+        $this->db->update('tb_hari', $data);
+    }
+
+    public function deleteHari($id_hari)
+    {
+        $this->db->where('id_hari', $id_hari);
+        $this->db->delete('tb_hari');
+    }
 
     //----------------------------- JAM ----------------------------------
     public function getAllJAM()
     {
         return $this->db->get('tb_jam')->result_array();
+    }
+
+    public function insertJam()
+    {
+        $data = [
+            "nama_jam" => $this->input->post('nama_jam', true),
+        ];
+        $this->db->insert('tb_jam', $data);
+    }
+
+    public function editJam($id_jam)
+    {
+        $data = [
+            "nama_jam" => $this->input->post('nama_jam', true),
+        ];
+
+        $this->db->where('id_jam', $id_jam);
+        $this->db->update('tb_jam', $data);
+    }
+
+    public function deleteJam($id_jam)
+    {
+        $this->db->where('id_jam', $id_jam);
+        $this->db->delete('tb_jam');
     }
 }
